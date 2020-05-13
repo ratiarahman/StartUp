@@ -20,6 +20,15 @@ html{
 	height: 10rem;
 }
 
+.subscribe{
+	color: grey;
+	font-size: 1.2rem;
+}
+
+.subscribe:hover{
+	color: gray;
+}
+
 h1{
 	font-size: 3rem;
 	color: #e2dbdb;

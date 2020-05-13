@@ -19,3 +19,4 @@ var Write = function write(){
 
 //calling the function
 Write();
+// document.getElementById('music').play();

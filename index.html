@@ -13,21 +13,50 @@
 
 	<link rel="stylesheet" type="text/css" href="style.css">
 
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function() {
+			document.cookie = 'MCPopupClosed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+
+			});
+		$('body').on('click', '.mc-closeModal', function() {
+			document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+			});		
+	</script>
+
 
 </head>
 <body>
 	<div class="container d-flex align-items-center h-100">
 		<div class="row">
 				<header class="text-center col-12">
+					<!-- <audio id="music" src="https://www.youtube.com/watch?v=DOay-WqjleQ" preload="auto"></audio> -->
+
 					<h1 id="target" class="text-uppercase"></h1>	
 				</header>
 				<div class="buffer"></div>
 				<section class="text-center col-12">
 					<hr>
-					<a href="https://mailchi.mp/82618a21aff4/startup"><button id="open-popup" class="btn btn-primary">Find out more</button></a>
+					<a href="https://mailchi.mp/82618a21aff4/startup"><button class="btn btn-primary">Find out more</button></a><br><br>
+					<a href="#" id="open-popup" class="subscribe">Subscribe</a>
 				</section>
 		</div>
 	</div>
+
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+
+<script>
+function showMailingPopUp() {
+	window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us8.list-manage.com","uuid":"4fcf84ff582cb8030537ac4ec","lid":"395252d092","uniqueMethods":true}) })
+};
+
+$('#open-popup').click(function() {
+	document.cookie = 'MCPopupSubscribed=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+		console.log("Hello World")
+		showMailingPopUp()
+	});
+</script>
 	
 <script src="app.js"></script>
 
